@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "gdc-swiper": "../../components/gdc-swiper/gdc-swiper",
+    "i-card": "../../components/dist/card/index",
+    "i-input": "../../components/dist/input/index"
+  },
+  "navigationBarTitleText": "搜索",
+  "backgroundColor": "#00CD66",
+  "navigationBarTextStyle": "white"
+}

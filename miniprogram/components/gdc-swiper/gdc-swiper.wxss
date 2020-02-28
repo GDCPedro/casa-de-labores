@@ -1,0 +1,6 @@
+/* components/gdc-swiper/gdc-swiper.wxss */
+
+.gdc-swiper, block, swiper-item, image {
+  width: 100%;
+  height: 400rpx;
+}

@@ -1,0 +1,4 @@
+<!--miniprogram/pages/imgTest/imgTest.wxml-->
+<button bindtap="getImgs">获取图片</button>
+<button open-type="getUserInfo">点击登录</button>
+<image src="{{imgSrc}}"></image>

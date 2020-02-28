@@ -1,0 +1,6 @@
+/**index.wxss**/
+
+.index-card {
+  width: 100%;
+  margin: 8rpx 0;
+}

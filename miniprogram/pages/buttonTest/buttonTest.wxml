@@ -1,0 +1,14 @@
+<!--miniprogram/pages/buttonTest/buttonTest.wxml-->
+<view style="padding:0 12rpx;">
+  <button style="width:100%;" type="warn" open-type="feedback">反馈</button>
+  <button style="width:100%;" type="primary" open-type="getUserInfo">登录   </button>
+  <button style="width:100%;" type="primary" bindtap="showUserInfo">用户信息</button>
+  <button style="width:100%;" type="warn" open-type="getPhoneNumber" bindgetphonenumber="showPhoneNo">获取手机号</button>
+</view>
+<view>
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox" wx:for="{{checkboxs}}" wx:key="item.name">
+      <checkbox value="{{item.name}}"/>{{item.value}}
+    </label>
+  </checkbox-group>
+</view>

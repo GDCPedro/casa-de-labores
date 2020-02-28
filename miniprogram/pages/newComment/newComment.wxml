@@ -1,0 +1,48 @@
+<view class="main-wrapper">
+  <i-input
+    value="{{ comment.company }}"
+    bind:change="setCompany"
+    title="公司名称"
+    maxlength="99"
+    placeholder="最长20个字符"
+    autofocus
+    maxlength="20" />
+
+  <i-input
+    value="{{ comment.title }}"
+    bind:change="setTitle"
+    title="职位"
+    maxlength="99"
+    placeholder="最长10个字符"
+    maxlength="20" />
+
+  <i-input
+    value="{{ comment.content }}"
+    bind:change="setContent"
+    i-class="high-input"
+    title="评论"
+    maxlength="99"
+    placeholder="说点什么吧..."
+    type="textarea" />
+
+<view class="fix-bottom">
+  <i-button
+    i-class="bottom-btn"
+    inline
+    long
+    bind:click="handlePublishAno"
+    size="large"
+    type="info">
+    匿名发布
+  </i-button>
+  <i-button
+    i-class="bottom-btn"
+    inline
+    long
+    bind:click="handlePublishReal"
+    size="large"
+    type="success">
+    实名发布
+  </i-button>
+</view>
+</view>

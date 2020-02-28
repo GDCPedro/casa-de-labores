@@ -1,0 +1,17 @@
+/* miniprogram/pages/newComment/newComment.wxss */
+.high-input {
+  min-height: 200rpx;
+}
+.fix-bottom {
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+.bottom-btn {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}

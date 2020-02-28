@@ -1,0 +1,7 @@
+<!--miniprogram/pages/poetryDetail/detail.wxml-->
+
+<view class="detail">
+  <i-card full title="{{selectedPoetry.rhythmic}}" extra="{{selectedPoetry.author}}">
+    <view slot="content">{{selectedPoetry.paragraphs}}</view>
+  </i-card>
+</view>
