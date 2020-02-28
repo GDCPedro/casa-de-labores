@@ -1,6 +1,10 @@
 /**index.wxss**/
 
-.index-card {
+.wrapper {
   width: 100%;
-  margin: 8rpx 0;
+  /* margin: 16rpx 0; */
+}
+
+.define-card i-card-body::before {
+  border-top-width: 0px !important;
 }

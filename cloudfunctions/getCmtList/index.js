@@ -15,6 +15,7 @@ exports.main = async (event, context) => {
   try {
     return await db.collection('comments')
       .limit(10)
+      .orderBy('createTime','desc')
       .get()
       .then(res => {
         return { data: res, code: 0, msg: '获取成功' }

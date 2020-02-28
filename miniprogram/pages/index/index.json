@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "i-button": "../../components/dist/button/index",
-    "i-card": "../../components/dist/card/index"
+    "i-card": "../../components/dist/card/index",
+    "i-icon": "../../components/dist/icon/index"
   }
 }

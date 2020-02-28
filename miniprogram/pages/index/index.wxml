@@ -1,5 +1,14 @@
 <view class="wrapper-bg">
-<i-card class="index-card">
-1
-</i-card>
+  <view class="wrapper" wx:for="{{ cmtList }}">
+    <i-card 
+      i-class="define-card"
+      title="{{ item.comment.company }}" 
+      full
+      extra="{{ item.comment.position }}">
+      <view slot="content">{{ item.comment.content }}</view>
+      <view slot="footer">
+        <i-icon type="share" />
+      </view>
+    </i-card>
+  </view>
 </view>

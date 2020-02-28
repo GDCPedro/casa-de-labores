@@ -13,7 +13,7 @@ exports.main = async (event, context) => {
 
   try {
     return await db.collection('comments').add({
-      data: { ...event, openid: wxContext.OPENID }
+      data: { ...event, createTime: db.serverDate() }
     }).then(res => {
       return { code: 0, msg: '发布成功' }
     }).catch(err => {
