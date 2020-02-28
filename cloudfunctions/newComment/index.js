@@ -11,15 +11,11 @@ const _ = db.command
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
 
-  const comment = event.comment
-
-  console.log(comment, 'comment')
-
   try {
     return await db.collection('comments').add({
-      data: event
+      data: { ...event, openid: wxContext.OPENID }
     }).then(res => {
-      return { code: 0 }
+      return { code: 0, msg: '发布成功' }
     }).catch(err => {
       return err
     })

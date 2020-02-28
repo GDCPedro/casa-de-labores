@@ -10,20 +10,17 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  const start = 10 * (Number(event.page_no) - 1)
 
   try {
-    return await db.collection('comments')
-      .limit(10)
-      .get()
-      .then(res => {
-        return { data: res, code: 0, msg: '获取成功' }
-      })
-      .catch(err => {
-        return err
-      })
+    return await db.collection('users').where({
+      openid: _.eq(wxContext.OPENID)
+    })
+    .get()
+    .then(res => {
+      return { code: 0, openid: wxContext.OPENID, data: res, msg: '获取成功' }
+    })
   } catch (error) {
-    return error
+    
   }
 
   // return {

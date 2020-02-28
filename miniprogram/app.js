@@ -30,7 +30,7 @@ App({
         }
       },
     })
-    // 获取openid
+    // 获取openid、用户信息
     wx.cloud.callFunction({
       name: 'getOpenId'
     }).then(res => {
@@ -38,6 +38,14 @@ App({
     }).catch(err => {
       console.error(err)
     })
+
+    wx.cloud.callFunction({
+      name: 'getUserBaseInfo',
+    })
+      .then(res => {
+        this.globalData.openid = res.result.openid
+        this.globalData.userInfo = { ...res.result.data.data[0] }
+      })
   },
   // 全局的数据
   globalData: {

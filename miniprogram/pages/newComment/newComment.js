@@ -1,4 +1,5 @@
-// miniprogram/pages/newComment/newComment.js
+const app = getApp()
+
 Page({
 
   /**
@@ -8,14 +9,48 @@ Page({
     comment: {
       company: '',
       content: '',
-      title: ''
+      position: ''
     }
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setDefaultInfo()
+  },
 
+  // 设置默认信息
+  setDefaultInfo: function () {
+    console.log(app.globalData)
+    this.setData({
+      ['comment.company']: app.globalData.userInfo.company,
+      ['comment.position']: app.globalData.userInfo.position,
+    })
+  },
+
+  // 匿名发布
+  /* 
+  @params    anonymous  true匿名 false实名
+  */
+  handlePublishAno: function (e) {
+    const anonymous = e.target.dataset.anonymous === 'true'
+    const data = {
+      ...this.data,
+      anonymous
+    }
+    app.service('newComment', data).then(res => {
+      if (res.code === 0) {
+        wx.showToast({
+          title: res.msg
+        })
+        wx.switchTab({
+          url: '/pages/index/index'
+        })
+      }
+    })
+      .catch(err => {
+        console.error(err)
+      })
   },
 
   /**
@@ -67,26 +102,6 @@ Page({
 
   },
 
-  // 勇敢实名发布
-  handlePublishReal() {
-    const comment = this.data.comment
-    wx.cloud.callFunction({
-      name: 'newComment',
-      data: {
-        comment
-      }
-    }).then(res => {
-      console.log(res)
-      if (res.result.code === 0) {
-        wx.showToast({
-          title: '发布成功！'
-        })
-      }
-    }).catch(err => {
-      console.log(err)
-    })
-  },
-
   // 设置值
   setCompany (e) {
     const company = e.detail.detail.value
@@ -95,10 +110,10 @@ Page({
     })
   },
 
-  setTitle (e) {
-    const title = e.detail.detail.value
+  setPosition (e) {
+    const position = e.detail.detail.value
     this.setData({
-      comment: { ...this.data.comment, title }
+      ['comment.position']: position
     })
   },
 

@@ -51,7 +51,7 @@ Page({
       })
       .catch(err => {
         wx.showToast({
-          title: err,
+          title: '错误',
           icon: 'none'
         })
         this.setData({
@@ -60,8 +60,9 @@ Page({
       })
     })
     .catch(err => {
+      console.log(err)
       wx.showToast({
-        title: err,
+        title: 'err',
         icon: 'none'
       })
     })

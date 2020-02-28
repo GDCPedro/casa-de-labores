@@ -3,25 +3,24 @@
     value="{{ comment.company }}"
     bind:change="setCompany"
     title="公司名称"
-    maxlength="99"
+    maxlength="20"
     placeholder="最长20个字符"
     autofocus
     maxlength="20" />
 
   <i-input
-    value="{{ comment.title }}"
-    bind:change="setTitle"
-    title="职位"
-    maxlength="99"
-    placeholder="最长10个字符"
-    maxlength="20" />
+    value="{{ comment.position }}"
+    bind:change="setPosition"
+    title="当前职位"
+    maxlength="10"
+    placeholder="最长10个字符" />
 
   <i-input
     value="{{ comment.content }}"
     bind:change="setContent"
     i-class="high-input"
     title="评论"
-    maxlength="99"
+    maxlength="999"
     placeholder="说点什么吧..."
     type="textarea" />
 
@@ -31,6 +30,7 @@
     inline
     long
     bind:click="handlePublishAno"
+    data-anonymous="true"
     size="large"
     type="info">
     匿名发布
@@ -39,7 +39,8 @@
     i-class="bottom-btn"
     inline
     long
-    bind:click="handlePublishReal"
+    bind:click="handlePublishAno"
+    data-anonymous="false"
     size="large"
     type="success">
     实名发布
