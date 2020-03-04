@@ -71,7 +71,7 @@
   pointer-events: none;
   box-sizing: border-box;
   border: 0 solid #e9eaec;
-  border-top-width: 1px
+  /* border-top-width: 1px */
 }
 
 .i-card-footer {

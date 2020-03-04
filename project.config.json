@@ -68,6 +68,20 @@
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "评论",
+					"pathName": "pages/messages/messages",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/messages/messages",
+					"pathName": "pages/messages/messages",
+					"query": "_id=1582949846635_0.4285147148433808_33576700-1582949846929_35_49010",
+					"scene": null
 				}
 			]
 		}

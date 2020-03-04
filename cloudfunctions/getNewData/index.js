@@ -1,6 +1,8 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
+// 获取更新后的点赞/评论/分享次数
+
 cloud.init()
 
 const db = cloud.database()
@@ -13,14 +15,12 @@ exports.main = async (event, context) => {
 
   try {
     return await db.collection('comments')
-    .add({
-      data: { ...event, createTime: db.serverDate() }
-    }).then(res => {
-      return { code: 0, msg: '发布成功' }
-    }).catch(err => {
-      return err
-    })
-  } catch (e) {
-    return e
+      .doc(event._id)
+      .get()
+      .then(res => {
+        return { data: res, code: 0, msg: 'Succeed' }
+      })
+  } catch (err) {
+    return err
   }
 }

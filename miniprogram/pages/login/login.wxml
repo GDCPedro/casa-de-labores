@@ -6,19 +6,19 @@
   <form>
     <i-input 
       title="昵称:" 
-      placeholder="请输入..."
+      placeholder="不可更改，最多10个字符"
       bind:change="onNickChange"
       maxlength="10"
       value="{{ nickName }}" />
     <i-input 
       title="公司:" 
-      placeholder="请输入..."
+      placeholder="请输入公司名称"
       bind:change="onCompanyChange"
       maxlength="10"
       value="{{ company }}" />
     <i-input 
-      title="职位:" 
-      placeholder="请输入..."
+      title="职位:"
+      placeholder="请输入当前职位"
       bind:change="onPositionChange"
       maxlength="10"
       value="{{ position }}" />

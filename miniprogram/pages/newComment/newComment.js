@@ -6,10 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isLoading: false,
     comment: {
       company: '',
       content: '',
-      position: ''
+      position: '',
+      like: 0,
+      share: 0,
+      message: 0
     }
   },
   /**
@@ -21,7 +25,6 @@ Page({
 
   // 设置默认信息
   setDefaultInfo: function () {
-    console.log(app.globalData)
     this.setData({
       ['comment.company']: app.globalData.userInfo.company,
       ['comment.position']: app.globalData.userInfo.position,
@@ -33,11 +36,16 @@ Page({
   @params    anonymous  true匿名 false实名
   */
   handlePublishAno: function (e) {
+    this.setData({
+      isLoading: true
+    })
     const anonymous = e.target.dataset.anonymous === 'true'
     const data = {
-      ...this.data,
+      ...app.globalData.userInfo,
+      ...this.data.comment,
       anonymous
     }
+    delete data._id
     app.service('newComment', data).then(res => {
       if (res.code === 0) {
         wx.showToast({
@@ -46,10 +54,16 @@ Page({
         wx.switchTab({
           url: '/pages/index/index'
         })
+        this.setData({
+          isLoading: false
+        })
       }
     })
       .catch(err => {
         console.error(err)
+        this.setData({
+          isLoading: false
+        })
       })
   },
 
@@ -104,9 +118,11 @@ Page({
 
   // 设置值
   setCompany (e) {
+
+    console.log(e)
     const company = e.detail.detail.value
     this.setData({
-      comment: { ...this.data.comment, company }
+      ['comment.company']: company
     })
   },
 
@@ -120,7 +136,7 @@ Page({
   setContent (e) {
     const content = e.detail.detail.value
     this.setData({
-      comment: { ...this.data.comment, content }
+      ['comment.content']: content
     })
   },
 })

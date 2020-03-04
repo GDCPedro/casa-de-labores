@@ -1,0 +1,66 @@
+<!--miniprogram/pages/messages/messages.wxml-->
+<view>
+  <i-card
+    title="{{ commentDetail.anonymous ? '匿名良好市民' : commentDetail.nickName }}" 
+    full
+    extra="{{ commentDetail.position }}">
+    <view slot="content">
+      <text>{{ commentDetail.content }}</text>
+      <view wx:if="{{ !!commentDetail.company }}" class="company-tag">
+        <i-tag class="i-tags">
+          {{ commentDetail.company }}
+        </i-tag>
+      </view>
+    </view>
+    <view class="msg-footer" slot="footer">
+      <button 
+        bindtap="handleOp" 
+        data-_id="{{ commentDetail._id }}"
+        data-type="share"
+        class="btn-no-border" 
+        open-type="share">
+        <i-icon type="share" />
+        <text class="comment-count">({{ commentDetail.share }})</text>
+      </button>
+      <button 
+        bindtap="handleOp" 
+        data-_id="{{ commentDetail._id }}"
+        data-type="message" 
+        class="btn-no-border">
+        <i-icon type="message" />
+        <text class="comment-count">({{ commentDetail.message }})</text>
+      </button>
+      <button 
+        bindtap="handleOp" 
+        data-_id="{{ commentDetail._id }}"
+        data-type="like"
+        class="btn-no-border">
+        <i-icon type="praise" />
+        <text class="comment-count">({{ commentDetail.like }})</text>
+      </button>
+    </view>
+  </i-card>
+
+  <!-- <view>
+    <view class="msg-wrapper" wx:for="{{ msgList }}" wx:key="_id">
+      <i-card thumb="{{ item.fromAvatar }}" title="{{ item.fromNick }}" >
+        <view slot="content">{{ item.comment }}</view>
+      </i-card>
+    </view>
+  </view> -->
+
+  <view>
+    <message-box />
+  </view>
+
+
+  <view class="footer-input">
+    <input 
+      value="{{ messageTxt }}"
+      bindinput="setMessageTxt"
+      type="text"
+      bindconfirm="handleSend"
+      maxlength="999"
+      placeholder="评论一下吧～" />
+  </view>
+</view>

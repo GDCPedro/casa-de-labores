@@ -12,5 +12,10 @@
     "@vant/weapp": "^1.0.6",
     "axios": "^0.19.0",
     "axios-miniprogram-adapter": "^0.2.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
   }
 }

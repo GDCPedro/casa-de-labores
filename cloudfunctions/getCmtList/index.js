@@ -10,7 +10,7 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  const start = 10 * (Number(event.page_no) - 1)
+  const lim = 10 * (Number(event.page_no) - 1)
 
   try {
     return await db.collection('comments')

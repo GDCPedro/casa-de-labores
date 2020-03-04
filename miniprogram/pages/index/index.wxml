@@ -1,13 +1,41 @@
 <view class="wrapper-bg">
-  <view class="wrapper" wx:for="{{ cmtList }}">
+  <view class="wrapper" wx:for="{{ cmtList }}" wx:key="_id">
     <i-card 
-      i-class="define-card"
-      title="{{ item.comment.company }}" 
+      title="{{ item.anonymous ? '匿名良好市民' : item.nickName }}" 
       full
-      extra="{{ item.comment.position }}">
-      <view slot="content">{{ item.comment.content }}</view>
-      <view slot="footer">
-        <i-icon type="share" />
+      extra="{{ item.position }}">
+      <view slot="content" data-_id="{{ item._id }}" bindtap="toDetail">
+        <text>{{ item.content }}</text>
+        <view class="company-tag">
+          <i-tag class="i-tags" name="单个标签">
+            {{ item.company }}
+          </i-tag>
+        </view>
+      </view>
+      <view class="msg-footer" slot="footer">
+        <button 
+          bindtap="handleOp" 
+          data-_id="{{ item._id }}"
+          data-type="share"
+          class="btn-no-border"
+          open-type="share">
+          <i-icon type="share" />
+          <text class="comment-count">({{ item.share }})</text>
+        </button>
+        <button 
+          bindtap="toDetail"
+          data-_id="{{ item._id }}"
+          data-type="message" 
+          class="btn-no-border">
+          <i-icon type="message" />
+          <text class="comment-count">({{ item.message }})</text>
+        </button>
+        <button 
+          bindtap="handleOp" 
+          class="btn-no-border">
+          <i-icon type="praise" />
+          <text class="comment-count">({{ item.like }})</text>
+        </button>
       </view>
     </i-card>
   </view>
