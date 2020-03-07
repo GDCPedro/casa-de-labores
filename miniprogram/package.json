@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext .wxml .js .wxss"
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,7 @@
     "axios-miniprogram-adapter": "^0.2.4"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1"

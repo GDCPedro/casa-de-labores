@@ -32,7 +32,6 @@ Page({
 
   // 发送消息
   handleSend: function (e) {
-    console.log(1,e)
     const data = {
       // 评论的内容
       comment: e.detail.value,
@@ -49,6 +48,7 @@ Page({
       // 点赞数
       like: 0
     }
+    console.log(data)
     app.service('addMessage', data)
       .then(res => {
         console.log(res)
@@ -59,7 +59,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData)
     this.setData({
       curId: options._id
     })
@@ -110,7 +109,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log(111)
+    // this.getDetail(this.data.curId)
+    // this.getTalkedData(this.data.curId)
   },
 
   /**

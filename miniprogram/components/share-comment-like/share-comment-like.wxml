@@ -1,0 +1,14 @@
+<view class="msg-footer">
+  <button bindtap="handleShare" data-type="share" class="btn-no-border" open-type="share">
+    <i-icon type="share" />
+    <text class="comment-count">({{ share }})</text>
+  </button>
+  <button bindtap="handleDetail" data-type="message" class="btn-no-border">
+    <i-icon type="message" />
+    <text class="comment-count">({{ message }})</text>
+  </button>
+  <button bindtap="handleLike" class="btn-no-border">
+    <i-icon type="praise" />
+    <text class="comment-count">({{ like }})</text>
+  </button>
+</view>

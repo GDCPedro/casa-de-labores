@@ -3,6 +3,7 @@
     "i-button": "../../components/dist/button/index",
     "i-card": "../../components/dist/card/index",
     "i-icon": "../../components/dist/icon/index",
-    "i-tag": "../../components/dist/tag/index"
+    "i-tag": "../../components/dist/tag/index",
+    "share-comment-like": "../../components/share-comment-like/share-comment-like"
   }
 }

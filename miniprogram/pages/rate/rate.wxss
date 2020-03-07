@@ -1,7 +1,0 @@
-/* miniprogram/pages/rate/rate.wxss */
-
-.rate-content {
-  font-size: 36rpx;
-  text-align: center;
-  color: red;
-}

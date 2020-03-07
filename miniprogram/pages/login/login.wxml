@@ -1,35 +1,15 @@
 <view class="img-wrapper">
   <image class="img" src="../../images/WechatIMG32638.jpeg"></image>
 </view>
-
 <view>
   <form>
-    <i-input 
-      title="昵称:" 
-      placeholder="不可更改，最多10个字符"
-      bind:change="onNickChange"
-      maxlength="10"
-      value="{{ nickName }}" />
-    <i-input 
-      title="公司:" 
-      placeholder="请输入公司名称"
-      bind:change="onCompanyChange"
-      maxlength="10"
-      value="{{ company }}" />
-    <i-input 
-      title="职位:"
-      placeholder="请输入当前职位"
-      bind:change="onPositionChange"
-      maxlength="10"
-      value="{{ position }}" />
+    <i-input title="昵称:" placeholder="不可更改，最多10个字符" bind:change="onNickChange" maxlength="10" value="{{ nickName }}" />
+    <i-input title="公司:" placeholder="请输入公司名称" bind:change="onCompanyChange" maxlength="10" value="{{ company }}" />
+    <i-input title="职位:" placeholder="请输入当前职位" bind:change="onPositionChange" maxlength="10" value="{{ position }}" />
   </form>
 </view>
-
 <view class="footer">
-  <i-button
-    loading="{{ isLoading }}"
-    open-type="getUserInfo"
-    bindgetuserinfo="getUserInfo"
-    type="success"
-    long="true">确认</i-button>
+  <i-button loading="{{ isLoading }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="success" long="true">
+    确认
+  </i-button>
 </view>

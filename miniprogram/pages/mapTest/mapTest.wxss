@@ -1,5 +1,0 @@
-/* miniprogram/pages/mapTest/mapTest.wxss */
-
-.gdc-map {
-  margin: 0 auto;
-}

@@ -1,0 +1,19 @@
+.msg-footer {
+  display: flex;
+}
+
+.btn-no-border {
+  background-color: #fff;
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 200rpx;
+}
+
+.btn-no-border::after {
+  border: none;
+}
+
+.comment-count {
+  font-size: 24rpx;
+  color: #393b3fcb;
+}

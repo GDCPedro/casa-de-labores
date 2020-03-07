@@ -24,12 +24,3 @@ i-card-body::before {
 .btn-no-border::after {
   border: none;
 }
-
-.comment-count {
-  font-size: 24rpx;
-  color: #393b3fcb;
-}
-
-.msg-footer {
-  display: flex;
-}

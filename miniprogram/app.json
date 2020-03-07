@@ -1,27 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
     "pages/im/im",
-    "pages/im/room/room",
-    "pages/mapTest/mapTest",
-    "pages/imgTest/imgTest",
-    "pages/buttonTest/buttonTest",
-    "pages/poetry/ci",
-    "pages/showPoetry/poetry",
     "pages/me/me",
-    "pages/poetryDetail/detail",
-    "pages/rate/rate",
-    "pages/tcb/tcb",
     "pages/newComment/newComment",
     "pages/login/login",
     "pages/messages/messages"
@@ -31,7 +12,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#00CD66",
     "navigationBarTitleText": "广场",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#333",

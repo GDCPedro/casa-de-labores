@@ -2,25 +2,45 @@
   background-color: #fff;
   height: 40rpx;
   line-height: 40rpx;
-  width: 200rpx;
+}
+
+.message-box {
+  width: 100%;
+  margin-top: 16rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  box-sizing: border-box;
 }
 
 .btn-no-border::after {
   border: none;
 }
 
-.comment-count {
-  font-size: 24rpx;
-  color: #393b3fcb;
+.header {
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #dddee1;
 }
 
-.header {
-
+.content {
+  width: 100%;
 }
 
 .header image {
   display: inline-block;
   width: 64rpx;
   height: 64rpx;
-  border-radius: 50%;
+  border-radius: 32rpx;
+}
+
+.nick-wrapper {
+  font-size: 24rpx;
+  color: #393b3fcb;
+  padding: 0 34rpx 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment {
+  padding-left: 20rpx;
 }

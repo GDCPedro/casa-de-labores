@@ -3,6 +3,8 @@
         "browser": true,
         "es6": true
     },
+    "lintOnSave": true,
+    "parser": "babel-eslint",
     "extends": [
         "airbnb-base"
     ],

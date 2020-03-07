@@ -38,6 +38,9 @@ Component({
     time: {
       type: Date,
       value: Date.now()
+    },
+    item: {
+      type: Object
     }
   },
 

@@ -1,16 +1,15 @@
 <view class="message-box">
   <view class="header">
-    <image class="avatar" src="{{ avatar }}"></image>
-    <view>
-      <text>{{ nick }}</text>
-      <button 
-        bindtap="handleLike" 
-        data-_id="{{ item._id }}"
-        data-type="like"
-        class="btn-no-border">
-        <i-icon type="praise" />
-        <text class="comment-count">({{ item.like }})</text>
-      </button>
+    <image class="avatar" src="{{ item.fromAvatar }}"></image>
+    <view class="content">
+      <view class="nick-wrapper">
+        <text>{{ item.fromNick }}</text>
+        <view bindtap="handleLike" data-_id="{{ item._id }}">
+          <i-icon type="praise" />
+          <text>({{ item.like }})</text>
+        </view>
+      </view>
+      <view class="comment">{{ item.comment }}</view>
     </view>
   </view>
 </view>

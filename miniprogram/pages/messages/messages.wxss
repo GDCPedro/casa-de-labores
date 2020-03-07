@@ -1,4 +1,8 @@
 
+.msg-wrapper {
+  padding-bottom: 120rpx;
+}
+
 .wrapper {
   width: 100%;
 }
@@ -34,8 +38,8 @@ i-card-body::before {
 }
 
 .footer-input {
-  /* position: fixed; */
-  /* bottom: 0; */
+  position: absolute;
+  bottom: 0;
 }
 
 .msg-wrapper {

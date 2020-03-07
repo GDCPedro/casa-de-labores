@@ -27,8 +27,8 @@ Page({
     }
   },
 
-  // 转发/评论/点赞
-  handleOp: function (e) {
+  // 转发
+  handleShare: function (e) {
     const { type, _id } = { ...e.target.dataset }
     app.service('addOpCount', { type, _id })
       .then(res => {
@@ -37,6 +37,11 @@ Page({
       .catch(err => {
         console.error(err)
       })
+  },
+
+  // 点赞
+  handleLike: function (e) {
+    console.log(1)
   },
 
   // 转发/评论/点赞后获取更新的数据

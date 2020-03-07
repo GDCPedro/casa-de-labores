@@ -1,7 +1,0 @@
-<!--miniprogram/pages/rate/rate.wxml-->
-
-<view>
-  <i-card title="美元" extra="人民币">
-    <view class="rate-content" slot="content">{{rateUSD}}</view>
-  </i-card>
-</view>

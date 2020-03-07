@@ -1,5 +1,0 @@
-<!--miniprogram/pages/tcb/tcb.wxml-->
-
-<view>
-  <button bindtap="routerUser">user</button>
-</view>

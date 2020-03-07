@@ -1,5 +1,0 @@
-/* miniprogram/pages/poetryDetail/detail.wxss */
-
-.detail {
-  margin-top: 50%;
-}

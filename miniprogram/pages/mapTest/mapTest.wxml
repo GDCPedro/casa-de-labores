@@ -1,9 +1,0 @@
-<!--miniprogram/pages/mapTest/mapTest.wxml-->
-
-<map class="gdc-map" latitude="{{latitude}}" longitude="{{longitude}}"></map>
-<button type="primary" bindtap="showLocation">显示经纬度</button>
-<view wx:if="{{showLocationText}}">
-  <text>经度：{{longitude}}</text>
-  <text>纬度{{latitude}}</text>
-</view>
-<button type="primary" bindtap="add">调用云函数add</button>
